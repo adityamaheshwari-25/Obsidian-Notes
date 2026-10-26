@@ -600,4 +600,68 @@ For the root scope there "$" sign, generally used when you are in some different
 
 ---
 
+# Loops and Ranges
+
+Basically iterating over a values.yaml file.
+
+<img width="1786" height="922" alt="image" src="https://github.com/user-attachments/assets/fb1167df-1f35-4ab7-bb52-d828cc9d300a" />
+
+---
+
+# Named Templates
+
+Actually we are having many repeated lines in the template file(Deployment, Service etc), so to fix that we have Named/Partial Templates.
+<img width="1139" height="819" alt="image" src="https://github.com/user-attachments/assets/0cb9c3a1-1305-4b83-9260-8e9eadc137c2" />
+
+So the repeated lines we move to the _helpers.tpl, "_" says to Helm don't treat it like a usual template file, because helm reads all the template files and create them into K8s manifest files, so the files with "_" first are ignored for creating the K8s manifest file.
+
+<img width="1403" height="636" alt="image" src="https://github.com/user-attachments/assets/48894ed5-916b-40ed-adc6-3820c5ee79ed" />
+so here basically "labels" is a named template.
+
+<img width="1829" height="594" alt="image" src="https://github.com/user-attachments/assets/535b622c-aaba-4ef5-bd66-93f201488a00" />
+you must have . in the end so to transfer the current scope.
+
+And make sure you have the proper indentation so that when that text comes in the placeholder it should be indented properly.
+
+<img width="1842" height="888" alt="image" src="https://github.com/user-attachments/assets/c64c420d-9e97-41a5-8421-c37437eb1f8f" />
+we have to fix the indentation.
+
+see template is an action not a function so it cannot pipe it with another function, so there's one another function that does the same job as the template.
+It can import named template and pipe it to another function.
+<img width="1848" height="895" alt="image" src="https://github.com/user-attachments/assets/fdd25778-a165-469a-ac16-91b1545ba3c3" />
+
+---
+
+# Chart Hooks
+
+<img width="1371" height="891" alt="image" src="https://github.com/user-attachments/assets/f449f7d5-c89d-46e8-8848-8c33b5699bd6" />
+
+<img width="1695" height="857" alt="image" src="https://github.com/user-attachments/assets/ef34de87-c251-4f8f-b760-84d9489850df" />
+
+Let's see now how these hooks are configured!
+
+So its basically the K8s jobs or pods that we configure hooks in helm charts, and also it has to be run as the pre-upgrade part of the application.
+
+This is how it identify that its a pre-upgrade hook and not a usual template, for that we add annotations.
+**Annotations are a way for us to add additional metadata to an object, which may be used by clients of Kubernetes, like in this case Helm to store data about that object and perform certain kind of actions.**
+
+<img width="1826" height="860" alt="image" src="https://github.com/user-attachments/assets/97f7444a-d5e4-4574-8af1-bafdabc3719c" />
+
+We can have multiple hooks configured at each step as well, for the order we can have weights for the hooks.
+<img width="1847" height="938" alt="image" src="https://github.com/user-attachments/assets/3441376d-ecd9-4965-971e-d6b0cbd2595c" />
+
+And after the Backup, the Job resource remains on the cluster, so to remove that we have "hook-delete-policy", it deletes the resource. 
+
+----
+
+
+
+
+
+
+
+
+
+
+
 
