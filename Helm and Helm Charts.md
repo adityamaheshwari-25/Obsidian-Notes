@@ -563,6 +563,41 @@ basically moving that function from front to the back with the pipe symbol.
 
 ---
 
+# Conditionals
 
+Now there might be a need if there's no related value present in the values.yaml so we don't want to have that in the template file, so that's where conditionals come, where basically you don't want to render those lines!!
+
+here, conditionals are all part of the templating language so its in the curly braces, 
+<img width="1838" height="776" alt="image" src="https://github.com/user-attachments/assets/b8b96c44-b9d2-4d3a-8d60-297b9e9f76c5" />
+if value is set 
+
+if not set
+<img width="1803" height="787" alt="image" src="https://github.com/user-attachments/assets/815ac31c-4fe2-423c-b5a1-d62347124518" />
+
+<img width="1321" height="819" alt="image" src="https://github.com/user-attachments/assets/728814dd-a6f5-41f9-bbc3-e22ddd291158" />
+to trim the extra space/lines with use "-" just after the second curly brace.
+
+Instead of operators, here we basically use functions for everything.
+<img width="1717" height="982" alt="image" src="https://github.com/user-attachments/assets/8e3edbf6-d44d-45e7-a260-8d5b35b6288b" />
+
+Common example of Conditionals is like whether you want to create that specific K8s object or not...
+we can add conditional around the entire template file as well!!
+<img width="1849" height="601" alt="image" src="https://github.com/user-attachments/assets/1d71fa43-b02c-40ce-b105-fdae3a605a63" />
+
+---
+
+# Scopes in Helm Charts (With)
+
+The "." in the .Release.Name or whatever like the first "." represents the root scope.
+<img width="1423" height="534" alt="image" src="https://github.com/user-attachments/assets/84054866-d5f9-4253-82bd-7fae6899ad2f" />
+Its the root scope by default if you don't set it.
+
+<img width="1662" height="863" alt="image" src="https://github.com/user-attachments/assets/643d5480-a2e7-423b-89b8-8cdd789f1be2" />
+this is scope hierarchy...
+
+For the root scope there "$" sign, generally used when you are in some different scope(within the with block) and you want to point to root.
+<img width="1693" height="960" alt="image" src="https://github.com/user-attachments/assets/8dd54774-bbb3-4fa0-8adc-050961109c5c" />
+
+---
 
 
