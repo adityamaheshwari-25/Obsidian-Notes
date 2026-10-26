@@ -640,7 +640,7 @@ It can import named template and pipe it to another function.
 
 Let's see now how these hooks are configured!
 
-So its basically the K8s jobs or pods that we configure hooks in helm charts, and also it has to be run as the pre-upgrade part of the application.
+**So its basically the K8s jobs or pods that we configure hooks in helm charts**, and also it has to be run as the pre-upgrade part of the application.
 
 This is how it identify that its a pre-upgrade hook and not a usual template, for that we add annotations.
 **Annotations are a way for us to add additional metadata to an object, which may be used by clients of Kubernetes, like in this case Helm to store data about that object and perform certain kind of actions.**
@@ -654,7 +654,34 @@ And after the Backup, the Job resource remains on the cluster, so to remove that
 
 ----
 
+- So . means the current context—the data available at this point in the template, such as .Values, .Release, and .Chart. For example, the included "labels" template can use .Release.Name or .Values because it receives ..
+- The - immediately after {{ trims whitespace before the expression.
+The `-` trims whitespace in the **template source around the expression**—spaces, tabs, or newlines. In `{{-`, Helm removes whitespace immediately **before** the `{{` from the rendered output.
 
+For example:
+
+```gotemplate
+first
+    {{- "second" }}
+```
+
+Without the `-`, the spaces and newline before the expression would remain. With it, they’re trimmed, so the output joins as:
+
+```text
+firstsecond
+```
+
+For YAML templates, be careful: trimming a newline can accidentally join lines and make the rendered YAML invalid.
+
+- `.tpl` is short for **template**. In a Helm chart, files such as `_helpers.tpl` hold reusable named template snippets, often for labels, names, or other repeated YAML.
+
+Helm does not render `_helpers.tpl` as a Kubernetes manifest by itself. A file starting with `_` is treated as a partial: other templates can call its definitions with `include` or `template`. The `.tpl` extension is a convention; the underscore is what marks the file as a partial.
+
+- _helpers.tpl is a template file, so its indentation doesn’t affect YAML by itself.
+- and `before hook creation` option is the default one if we don't mention the policy.
+
+
+---
 
 
 
