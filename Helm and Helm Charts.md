@@ -503,3 +503,66 @@ spec:
 
 With the release name `hello-world-1`, the Deployment is named `hello-world-1-nginx`.
 
+<img width="1726" height="772" alt="image" src="https://github.com/user-attachments/assets/37599836-b718-43f1-aeb4-9278f73afac8" />
+
+<img width="1856" height="815" alt="image" src="https://github.com/user-attachments/assets/3ecb07f3-ba43-4b52-9815-f5c60868b310" />
+
+Helm does not allow two releases with the same name.
+
+<img width="1786" height="944" alt="image" src="https://github.com/user-attachments/assets/df1511bf-6178-4c0c-8844-27eff5434178" />
+
+So anything that should not be hardcoded should be templatized!!
+<img width="1844" height="909" alt="image" src="https://github.com/user-attachments/assets/9508772e-e7e1-40c8-964a-395a9f9f6e26" />
+
+<img width="1834" height="804" alt="image" src="https://github.com/user-attachments/assets/84abc0f6-5da1-4cd3-b464-d8a9d02ed8fc" />
+
+That's how you define dictionary in the values.yaml file and use it in a template.
+
+So basically we you install a helm chart, it uses files in the template directory and then combines it with the information about the releases like the release name or any other info, + the data stored in the values.yaml + the chart details to form the final version of the manifest files to deploy resources on K8s.
+<img width="1852" height="815" alt="image" src="https://github.com/user-attachments/assets/9971ca2b-2371-4d0b-919f-f903c54a6459" />
+
+Make sure the chart is working as intended.
+<img width="519" height="894" alt="image" src="https://github.com/user-attachments/assets/07789f18-3b26-4c90-9a5b-697fd6f29d6c" />
+
+lint - it basically checks the syntax errors and all.
+template - it basically shows us what will be manifest generated after placing the values in the template locally.
+<img width="1846" height="885" alt="image" src="https://github.com/user-attachments/assets/4092bf64-0281-4f20-8c26-c5575e59a516" />
+
+There are other errors as well that these two commands can't catch like writing container instead of containers as it sees the templating and yaml format is correct, so what's wrong is the Kubernetes manifest format, so only K8s can tell us that this is wrong to catch this we have this dry-run command.
+
+So in --dry-run basically it pretends to install that package, and give us the errors if any that K8s would be giving us in the real install.
+<img width="1840" height="996" alt="image" src="https://github.com/user-attachments/assets/4b9f8e18-2218-45f9-a8d7-279cc6297f37" />
+
+---
+
+# Functions in Helm
+
+<img width="1765" height="891" alt="image" src="https://github.com/user-attachments/assets/03b63d10-77a3-417c-badc-1dbb4b3c4fcf" />
+
+Basically if we don't have values in the values.yaml, so it should have some default value to fall back on, that's where Functions comes...
+so that i should not fail creating pods....
+
+<img width="1784" height="876" alt="image" src="https://github.com/user-attachments/assets/d3e3eb28-b076-4498-93cf-f87b8bdd7fe2" />
+
+So here basically "upper" is the function and ".Values.image.repository" is the argument.
+
+There are many other kinds of functions as well! Refer Helm docs,
+<img width="1407" height="944" alt="image" src="https://github.com/user-attachments/assets/89835ba5-dd01-42fb-8b2c-df61070e1ad7" />
+
+<img width="1854" height="758" alt="image" src="https://github.com/user-attachments/assets/6f13ec16-9182-4b38-a117-525af5ae0675" />
+
+---
+
+# Pipelines
+
+just as there are functions, but we most commonly use pipelines...basically using the pipe symbol, 
+Example:
+<img width="1797" height="182" alt="image" src="https://github.com/user-attachments/assets/045e1cd3-20da-4beb-a824-90592b4cce74" />
+
+basically moving that function from front to the back with the pipe symbol.
+
+---
+
+
+
+
