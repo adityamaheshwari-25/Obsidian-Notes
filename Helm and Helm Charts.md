@@ -683,6 +683,15 @@ Helm does not render `_helpers.tpl` as a Kubernetes manifest by itself. A file s
 
 ---
 
+# Packaging, Signing and Uploading Charts
+
+So basically first we package the chart and then we upload it to the online repository so others can use them.
+So to make the package that the users are downloading is legit, we sign it.
+
+
+---
+
+
 
 
 
