@@ -25,22 +25,7 @@ Thousands are charts are already available at different helm repos...
 
 
 ---
-Bro just lock the fk in, learn devops and SRE related stuff, and prepare for interview and all and just switch from this company...and probably work for US/Global companies manhh!!!
 
-And also once you learn about these things, start to build something on your own, some deep-tech related startup with related to engineering and stuff manhh!!! Be a deep tech founder!!!
-Like you have CastAI, vCluster, these kinda things actually!!!!
-
-Start building manhh, keep learning and keep applying, and keep building these deep-tech startups!!!!!
-
-And one more thing, either late nights or early mornings...........simple as that manhh, study at that time onlyyyyyyyyy!!!! there's max focus at this time!!!!
-
-Go all in tech, and build these deep tech startups, earn or raise money, get money and exit, simple as that, then start building some other one!!!!!!!!!!!!
-
-And if you have anything like that in the market, still make that with more refinement and good features actually!!! All products have the market manhhh!!!
-
-I want to be deep tech startup founder manhh, like of CastAI or vCluster, so with related to K8s and infra related stuff only actually......
-
--------------
 
 #### Helm Charts
 Helm basically knows how to do its job using charts actually. Charts are kinda intruction manuals for it.
