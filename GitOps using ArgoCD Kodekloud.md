@@ -54,6 +54,31 @@ So the changes are pulled by the Operator in the GitOps, in DevOps changes are p
 
 ### Push vs Pull Based Deployments
 
+In pull based approach, deployment is not coupled to the CI/CD pipeline because the deployments are done in the cluster internally.
+
+<img width="1919" height="984" alt="image" src="https://github.com/user-attachments/assets/21e4bf4f-9f22-4dd2-b796-1d47968ee8d6" />
+
+---
+
+### GitOps Feature Set and Usecases
+
+<img width="1919" height="960" alt="image" src="https://github.com/user-attachments/assets/480fd3ea-78a2-4109-8940-502a4cb550fe" />
+
+---
+
+### GitOps benefits and Challenges
+
+In GitOps, it makes sure no one can do the deployment manually.
+
+<img width="1805" height="872" alt="image" src="https://github.com/user-attachments/assets/2af779ea-bb34-4ae4-b167-36130a300fae" />
+
+
+So yeah understand this thing that GitOps is a concept, now there are several projects/tools that implement this like ArgoCD and all....
+
+A list of tools that provide the GitOps capability.
+<img width="1725" height="887" alt="image" src="https://github.com/user-attachments/assets/a91464fa-a2d4-457f-8799-df6472f70c2e" />
+
+
 
 
 
